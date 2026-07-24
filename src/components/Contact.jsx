@@ -30,7 +30,7 @@ function Contact() {
     if (!form.message.trim()) {
       newErrors.message = "Message is required";
     } else if (form.message.length < 10) {
-      newErrors.message = "Message should be at least 10 characters";
+      newErrors.message = "Message should be at least 10 to 15 characters";
     }
 
     return newErrors;
