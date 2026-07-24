@@ -9,8 +9,7 @@ function Footer() {
         <div className="footer-about">
           <h2>NorthPeak Digital</h2>
           <p>
-            We build modern websites, AI-powered solutions, and scalable
-            digital products that help businesses grow faster.
+            We build modern websites, AI-powered solutions.
           </p>
         </div>
 

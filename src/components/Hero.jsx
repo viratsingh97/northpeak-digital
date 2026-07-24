@@ -11,17 +11,16 @@ function Hero() {
         </h1>
 
         <p>
-          NorthPeak Digital helps startups and enterprises grow through
-          innovative web development, AI solutions, UI/UX design, and cloud
-          technologies.
+          NorthPeak Digital helps startups grow through
+          innovative web development, AI solutions.
         </p>
 
         <div className="hero-buttons">
-          <button className="primary-btn">
-            Get Started <FaArrowRight />
+          <button type="button" className="primary-btn">
+            Get Started <FaArrowRight aria-hidden="true" />
           </button>
 
-          <button className="secondary-btn">
+          <button type="button" className="secondary-btn">
             Explore Services
           </button>
         </div>
@@ -30,7 +29,7 @@ function Hero() {
       <div className="hero-image">
         <img
           src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700"
-          alt="Digital Agency"
+          alt="Team collaborating on web development and digital solutions"
         />
       </div>
     </section>

@@ -24,13 +24,13 @@ function Contact() {
     if (!form.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(form.email)) {
-      newErrors.email = "Enter a valid email";
+      newErrors.email = "Enter a valid email address";
     }
 
     if (!form.message.trim()) {
       newErrors.message = "Message is required";
     } else if (form.message.length < 10) {
-      newErrors.message = "Message should be at least 10 to 15 characters";
+      newErrors.message = "Message should be at least 10 characters long";
     }
 
     return newErrors;
@@ -62,36 +62,65 @@ function Contact() {
         Have a project in mind? We'd love to hear from you.
       </p>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} noValidate>
+        <label htmlFor="name">Full Name</label>
         <input
+          id="name"
           type="text"
-          placeholder="Your Name"
           name="name"
+          placeholder="Your Name"
+          autoComplete="name"
           value={form.name}
           onChange={handleChange}
+          required
+          aria-invalid={!!errors.name}
+          aria-describedby={errors.name ? "name-error" : undefined}
         />
 
-        {errors.name && <small>{errors.name}</small>}
+        {errors.name && (
+          <small id="name-error" aria-live="polite">
+            {errors.name}
+          </small>
+        )}
 
+        <label htmlFor="email">Email Address</label>
         <input
+          id="email"
           type="email"
-          placeholder="Your Email"
           name="email"
+          placeholder="Your Email"
+          autoComplete="email"
           value={form.email}
           onChange={handleChange}
+          required
+          aria-invalid={!!errors.email}
+          aria-describedby={errors.email ? "email-error" : undefined}
         />
 
-        {errors.email && <small>{errors.email}</small>}
+        {errors.email && (
+          <small id="email-error" aria-live="polite">
+            {errors.email}
+          </small>
+        )}
 
+        <label htmlFor="message">Message</label>
         <textarea
+          id="message"
+          name="message"
           rows="6"
           placeholder="Your Message"
-          name="message"
           value={form.message}
           onChange={handleChange}
-        ></textarea>
+          required
+          aria-invalid={!!errors.message}
+          aria-describedby={errors.message ? "message-error" : undefined}
+        />
 
-        {errors.message && <small>{errors.message}</small>}
+        {errors.message && (
+          <small id="message-error" aria-live="polite">
+            {errors.message}
+          </small>
+        )}
 
         <button type="submit">Send Message</button>
       </form>
