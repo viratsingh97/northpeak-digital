@@ -1,5 +1,4 @@
 import "./Testimonials.css";
-import { FaStar } from "react-icons/fa";
 
 const testimonials = [
   {
@@ -26,6 +25,7 @@ function Testimonials() {
   return (
     <section className="testimonials">
       <h2>What Our Clients Say</h2>
+
       <p className="subtitle">
         Trusted by startups and businesses worldwide.
       </p>
@@ -33,26 +33,26 @@ function Testimonials() {
       <div className="testimonial-grid">
         {testimonials.map((item, index) => (
           <div className="testimonial-card" key={index}>
+
             <div className="stars">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
+              ★★★★★
             </div>
 
-            <p className="review">"{item.review}"</p>
+            <p className="review">
+              "{item.review}"
+            </p>
 
-           <div className="client">
-    <div className="avatar">
-        {item.name.charAt(0)}
-    </div>
+            <div className="client">
+              <div className="avatar">
+                {item.name.charAt(0)}
+              </div>
 
-    <div>
-        <h3>{item.name}</h3>
-        <span>{item.role}</span>
-    </div>
-</div>
+              <div>
+                <h3>{item.name}</h3>
+                <span>{item.role}</span>
+              </div>
+            </div>
+
           </div>
         ))}
       </div>
